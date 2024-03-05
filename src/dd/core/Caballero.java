@@ -1,7 +1,6 @@
 package dd.core;
 
 class Caballero extends Personaje{
-    private static final String nombre = "";
     private static final int numAtaques = 2;
     private static final int salud = 1500;
 

@@ -6,7 +6,7 @@ import dd.core.Personaje;
 import dd.core.Rey;
 import dd.core.Troll;
 
-public class ControlBasico {
+public class  DDApp{         //ControlBasico
     public static void main(String[] args) {
         //pruebas sin ejercitos ni victorias
         Personaje p1= new Rey("Arturo");
@@ -37,11 +37,5 @@ public class ControlBasico {
 
         System.out.println("comprobar salud actualizada de p2");
         System.out.println(p2.getSalud()<0?"MUERTO maldito " + p2.getNombre():p2);
-    }
-}
-
-class DDApp{
-    public static void main(String[] args) {
-        System.out.println("Hola Dungeons & Dragons");
     }
 }

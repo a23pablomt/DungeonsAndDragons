@@ -1,10 +1,10 @@
 package dd.core;
 
 public class Personaje{
-    String nombre;
+    public String nombre;
     Ataque ataque;
     int numAtaques;
-    int salud;
+    public int salud;
 
     public Personaje(String nombre, int numAtaques, int salud) {
         this.nombre = nombre;
@@ -13,7 +13,7 @@ public class Personaje{
     }
 
     public void setAtaque(Ataque at) {
-        this.ataque = at;
+        ataque = at;
     }
 
     public Object getAtaque() {
