@@ -1,15 +1,15 @@
 package dd.core;
 
-class Caballero extends Personaje{
-    private static final int numAtaques = 2;
-    private static final int salud = 1500;
+import java.util.Objects;
 
-    public Caballero(String nombre, Ataque ataque, int numAtaques, int salud) {
-        super(nombre, numAtaques, salud);
+public class Caballero extends Personaje{
+
+    public Caballero(String nombre) {
+        super(nombre, nombreCaballero(nombre), 2, 1500);
     }
 
-    Ataque randomAtaque(){
-        if((int) (Math.random()*1) == 0)return new AtaqueEspada();
+    static Ataque nombreCaballero(String nombre){
+        if(Objects.equals(nombre, "Lancelot")) return new AtaqueEspada();
         else return new AtaqueArco();
     }
 }

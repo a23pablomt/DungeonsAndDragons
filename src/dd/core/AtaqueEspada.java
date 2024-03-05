@@ -1,16 +1,13 @@
 package dd.core;
 
-public class AtaqueEspada implements Ataque{
-    private static final String tipo = "AtaqueEspada";
-    private static final int factor = 100;
-
+public class AtaqueEspada extends Ataque{
     @Override
-    public int ejecutarAtaque() {
-        return (int) ((Math.random())*(Math.random()*2)*factor);
+    public int getFactor() {
+        return 100;
     }
 
     @Override
-    public String getNombre() {
-        return tipo;
+    public String getTipo() {
+        return "Ataque Espada";
     }
 }

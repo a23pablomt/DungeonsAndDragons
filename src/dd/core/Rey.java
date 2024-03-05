@@ -1,10 +1,8 @@
 package dd.core;
 
 public class Rey extends Personaje{
-    private static final int numAtaques = 3;
-    public static final int salud = 2000;
-
     public Rey(String nombre) {
-        super(nombre, numAtaques, salud);
+        super(nombre, new AtaqueEspada(), 3, 2000);
     }
+
 }

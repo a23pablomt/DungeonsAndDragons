@@ -1,13 +1,14 @@
 package dd.core;
 
-public class Personaje{
-    public String nombre;
-    Ataque ataque;
-    int numAtaques;
-    public int salud;
+public abstract class Personaje{
+    protected String nombre;
+    protected Ataque ataque;
+    protected int numAtaques;
+    protected int salud;
 
-    public Personaje(String nombre, int numAtaques, int salud) {
+    public Personaje(String nombre, Ataque ataque, int numAtaques, int salud) {
         this.nombre = nombre;
+        this.ataque = ataque;
         this.numAtaques = numAtaques;
         this.salud = salud;
     }
@@ -21,11 +22,16 @@ public class Personaje{
     }
 
     public int[] ataca(Personaje p) {
-        int [] arrayAtaques = new int[p.numAtaques];
-        for(int i = 0; i < p.numAtaques; i++){
-            arrayAtaques[i] = ataque.ejecutarAtaque();
+        int [] arrayAtaques = new int[this.numAtaques];
+        for(int i = 0; i < this.numAtaques; i++){
+            arrayAtaques[i] = ataque.calcAtaque();
+            p.pierdeVida(arrayAtaques[i]);
         }
         return arrayAtaques;
+    }
+
+    protected void pierdeVida(int damage){
+        salud = salud - damage;
     }
 
     public int getSalud() {
@@ -38,5 +44,10 @@ public class Personaje{
 
     public String getNombre() {
         return nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "["+ this.nombre +": "+ this.salud +"]";
     }
 }
