@@ -38,14 +38,6 @@ public abstract class Personaje{
         return salud;
     }
 
-    public void setSalud(int i) {
-        salud = i;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
     @Override
     public String toString() {
         return "["+ this.nombre +": "+ this.salud +"]";

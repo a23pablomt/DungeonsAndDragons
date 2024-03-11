@@ -1,18 +1,15 @@
 package dd.core;
 
-public abstract class  Ataque {
+public abstract interface Ataque {
 
+    String getTipo();
 
-    protected abstract String getTipo();
+    int getFactor();
 
-    protected abstract int getFactor();
-
-    public int calcAtaque(){
-        return (int)(((int)(Math.random()*2)*(Math.random()*2)*this.getFactor()));
+    default int calcAtaque() {
+        return (int) ((int)(Math.random() * 2) * (Math.random()* 2) * this.getFactor());
     }
 
     @Override
-    public String toString() {
-        return getTipo();
-    }
+    String toString();
 }
